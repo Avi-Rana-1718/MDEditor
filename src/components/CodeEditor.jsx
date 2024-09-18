@@ -76,6 +76,10 @@ export default function CodeEditor(props) {
 
     // formatting
     function formatData(data) {
+        
+        // if(data.length==0 || data==" ") {
+        //     data="<br/>";
+        // }
 
         if(data.includes("-")) {
             // doesnt handle sublists

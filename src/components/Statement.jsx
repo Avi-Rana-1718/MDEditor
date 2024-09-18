@@ -12,7 +12,18 @@ export default function Statement(props) {
         <span
         contentEditable={true}
         className="text-[#f3f3f3] focus:outline-none w-full"
+
         onKeyDown={(e)=>{
+
+            console.log(e);
+
+                let nArr = [...data];
+                nArr[lineNumber-1].value = e.target.innerText + e.key;
+                nArr[lineNumber-1].updateID = Math.random().toString(16).slice(2);
+                setData(nArr);
+
+
+
                 if(e.key=="Enter") {
                     //get cursor pos
                     let sel = document.getSelection();
@@ -36,7 +47,7 @@ export default function Statement(props) {
                         nArr.splice(lineNumber,0, {value:"",  updateID: Math.random().toString(16).slice(2)})
                     }
                     setData(nArr)
-                } 
+                }
         }}
         >
         {data[lineNumber-1].value}
