@@ -57,7 +57,8 @@ export default function Statement(props) {
             onKeyDown={(e)=>{
 
                 // console.log(e);
-                // alert(e.key)
+                console.log(e);
+                
                 
 
                 if(e.keyCode==13) {
