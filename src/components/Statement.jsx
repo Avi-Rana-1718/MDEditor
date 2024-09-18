@@ -36,7 +36,7 @@ export default function Statement(props) {
             }}
             onChange={(e)=>{
 
-                // console.log(e.nativeEvent.data);
+                console.log(e.nativeEvent.data);
                 
                 
                 if(e.nativeEvent.data=="(") {
@@ -57,11 +57,8 @@ export default function Statement(props) {
             onKeyDown={(e)=>{
 
                 // console.log(e);
-                console.log(e);
-                
-                
 
-                if(e.keyCode==13) {
+                if(e.key=="Enter") {
                     e.preventDefault()
                     if(e.target.selectionStart<e.target.value.length) {
                         addStatement(lineNumber, e.target.selectionStart)
