@@ -2,38 +2,9 @@ import { useEffect, useState } from "react"
 import Statement from "./Statement";
 
 export default function CodeEditor(props) {
-    const [data, setData] = useState([
-        {
-        value: "Hello world",
-        inFocus: -1,
-        updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "**This** is a _list_",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- One",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- Two",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- ~~Four~~ Three",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- Four",
-            inFocus: 6,
-            updateID: Math.random().toString(16).slice(2),
-        }
-    ])
+    const [data, setData] = useState([{
+        value: "Hello world"
+    }]);
 
 
     function changeData(newLine,focusPoint, i) {
@@ -102,6 +73,7 @@ export default function CodeEditor(props) {
         setData(newData)
     }
 
+    // formatting
     function formatData(data) {
 
         if(data.includes("-")) {
@@ -260,7 +232,7 @@ export default function CodeEditor(props) {
         <code>
             {data.map((el, index)=>{
 
-                return <Statement key={el.updateID + el.value} val={el} lineNumber={index+1} changeVal={changeData} addStatement={addStatement} removeStatement={removeStatement} changeFocus={changeFocus} />
+                return <Statement key={el.updateID + el.value} lineNumber={index+1} setData={setData} data={data}/>
             })}
         </code>
         <div className="bg-[#323233] py-1 m-2 rounded-lg">
