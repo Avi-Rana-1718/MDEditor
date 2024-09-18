@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 // make this a markdown editor with extented features
 
+// optimzed for mobile
+
 export default function Statement(props) {
     let {lineNumber, val, changeVal, addStatement, changeFocus, removeStatement}=props;
     let inputRef = useRef(null);
@@ -55,9 +57,11 @@ export default function Statement(props) {
             onKeyDown={(e)=>{
 
                 // console.log(e);
+                alert(e.key)
                 
 
                 if(e.key=="Enter") {
+                    e.preventDefault()
                     if(e.target.selectionStart<e.target.value.length) {
                         addStatement(lineNumber, e.target.selectionStart)
                     } else {

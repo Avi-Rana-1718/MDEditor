@@ -98,9 +98,7 @@ export default function CodeEditor(props) {
         newData[pos].inFocus=-1;
         newData[i].updateID=Math.random().toString(16).slice(2);
         newData[pos].updateID=Math.random().toString(16).slice(2);
-
-        //console.log(newData[i].inFocus);
-        // console.log(newData);
+        
         setData(newData)
     }
 
