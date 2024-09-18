@@ -57,10 +57,10 @@ export default function Statement(props) {
             onKeyDown={(e)=>{
 
                 // console.log(e);
-                alert(e.key)
+                // alert(e.key)
                 
 
-                if(e.key=="Enter") {
+                if(e.keyCode==13) {
                     e.preventDefault()
                     if(e.target.selectionStart<e.target.value.length) {
                         addStatement(lineNumber, e.target.selectionStart)
