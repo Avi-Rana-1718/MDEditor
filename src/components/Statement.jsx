@@ -16,7 +16,7 @@ export default function Statement(props) {
                 if(e.key=="Enter") {
                     e.preventDefault();
                     let nArr = [...data];
-                    nArr.splice(lineNumber,0, {value:""})
+                    nArr.splice(lineNumber,0, {value:"",  updateID: Math.random().toString(16).slice(2)})
                     setData(nArr)
                 } 
         }}

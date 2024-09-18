@@ -3,7 +3,8 @@ import Statement from "./Statement";
 
 export default function CodeEditor(props) {
     const [data, setData] = useState([{
-        value: "Hello world"
+        value: "Hello world",
+        updateID: Math.random().toString(16).slice(2)
     }]);
 
 
